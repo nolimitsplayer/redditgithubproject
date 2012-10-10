@@ -4,6 +4,7 @@ public class Matrix {
 	public Matrix(width, height) {
 		this.width=width;
 		this.height=height;
+		//do something with making height # of horizontal arrays of matrix
 	}
 
 	public Matrix multiplyMatrix(Matrix a, Matrix b) {
@@ -16,7 +17,7 @@ public class Matrix {
 	}
 
 	public Matrix determinantOfMatrix(Matrix a) {
-		if (a.width == a.height) {
+		if (a.getWidth() == a.getHeight()) {
 			//do determinant
 		} else {
 			System.out.println("Determinant is not square.");
