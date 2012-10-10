@@ -1,10 +1,11 @@
 public class Matrix {
-	private int width, height;
+	private int row, column;
+	private double[][] matrix;
 
-	public Matrix(width, height) {
-		this.width=width;
-		this.height=height;
-		//do something with making height # of horizontal arrays of matrix
+	public Matrix(row, column) {
+		this.row=row;
+		this.column=column;
+		matrix = new double[row][column];
 	}
 
 	public Matrix multiplyMatrix(Matrix a, Matrix b) {
@@ -17,7 +18,7 @@ public class Matrix {
 	}
 
 	public Matrix determinantOfMatrix(Matrix a) {
-		if (a.getWidth() == a.getHeight()) {
+		if (a.rows() == a.columns()) {
 			//do determinant
 		} else {
 			System.out.println("Determinant is not square.");
@@ -27,11 +28,15 @@ public class Matrix {
 	public Matrix rref(Matrix a) {
 	}
 
-	private int getWidth() {
+	private int rows() {
 		return width;
 	}
 
-	private int getHeight() {
+	private int columns() {
 		return height;
+	}
+
+	public String printMatrix(Matrix a) {
+		
 	}
 }
