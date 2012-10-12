@@ -9,6 +9,42 @@ public class Matrix {
 	}
 
 	public Matrix multiplyMatrix(Matrix a, Matrix b) {
+		int n=a.rows();
+		int m=a.columns();
+		int x=b.rows();
+		int y=b.columns();
+		if(m!=x){
+			System.out.println("Matrices cannot be multiplied");
+			return null;
+		}
+		else{
+			int i,j,k,c,count=0,sum;
+			Matrix product=new Matrix(n,y);
+			double temp[]=new double[n*y];
+			/*
+			 * I've multipled the matrices by using three loops. 
+			 * The variable c is used to find individual products while
+			 * sum is used to store the final element that'll go into the product matrix
+			 */
+			for(i=0;i<n;i++)
+			{
+				for(j=0;j<y;j++)
+				{
+					sum=0;
+					for(k=0;k<m;k++)
+					{
+						c=m1[i][k]*m2[k][j];
+						sum=sum+c;
+					}
+					temp[count++]=sum;// Using a crappy hack to put the values into product because I can't think of a way to do this in the loop itself.
+				}
+			}
+			count=0;
+			for(i=0;i<n;i++)
+				for(j=0;j<y;j++)
+					product.matrix[i][j]=temp[count++];//This is where the values are actually put into product.
+		}
+		return product;
 	}
 
 	public Matrix divideMatrix(Matrix a, Matrix b) {
