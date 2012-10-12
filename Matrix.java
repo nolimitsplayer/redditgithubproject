@@ -3,8 +3,6 @@ public class Matrix {
 	private double[][] matrix;
 
 	public Matrix(row, column) {
-		this.row=row;
-		this.column=column;
 		matrix = new double[row][column];
 	}
 
@@ -39,11 +37,11 @@ public class Matrix {
 	}
 
 	private int rows() {
-		return width;
+		return row;
 	}
 
 	private int columns() {
-		return height;
+		return column;
 	}
 
 	public String printMatrix(Matrix a) {
